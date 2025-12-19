@@ -1,5 +1,5 @@
 <script>
-    const lang = navigator.language.startsWith("de") ? "de" : "en";
-    window.location.replace(`${lang}/`);
-  </script>
-  
+  const lang = navigator.language.startsWith("de") ? "de" : "en";
+  const domain = "https://www.endex-geodaten.de"; // deine eigene Domain
+  window.location.replace(`${domain}/${lang}/`);
+</script>

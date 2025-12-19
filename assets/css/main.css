@@ -2679,3 +2679,18 @@ input, select, textarea {
 			}
 
 	}
+
+/* Desktop & tablets: fixed logo size */
+.logo {
+	width: 500px;
+	height: auto;
+	display: block;
+  }
+  
+  /* Small screens: make it fit vertically */
+  @media (max-width: 768px) {
+	.logo {
+	  width: 80vw;      /* relative to viewport, so it shrinks */
+	  max-width: 400px; /* optional cap if you like */
+	}
+  }

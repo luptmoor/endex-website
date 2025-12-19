@@ -1,7 +1,4 @@
 <script>
-  const path = window.location.pathname.split('/').pop(); // z.B. "about.html" oder "index.html"
-  const lang = navigator.language.startsWith("de") ? "de" : "en";
-  const domain = "https://www.endex-geodaten.de";
-  
-  window.location.replace(`${domain}/${lang}/${path}`);
+    const lang = navigator.language.startsWith("de") ? "de" : "en";
+    window.location.replace(`${lang}/`);
 </script>

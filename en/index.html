@@ -107,6 +107,27 @@
 								<span>|</span>
 								<a href="../en/index.html" lang="en">EN</a>
 							</nav>
+							<script>
+								// Pfad der aktuellen Seite
+								const path = window.location.pathname;
+							  
+								// Alle Sprach-Links durchgehen
+								document.querySelectorAll('.lang-switch a').forEach(link => {
+								  // href des Links relativ zum Root
+								  let href = link.getAttribute('href');
+							  
+								  // Project Page: ../ am Anfang entfernen
+								  if (href.startsWith('../')) {
+									href = href.replace('../', '/');
+								  }
+							  
+								  // Wenn die aktuelle Seite im href enthalten ist, aktiv markieren
+								  if (path.includes(href)) {
+									link.classList.add('active');
+								  }
+								});
+							  </script>
+							  
 
 					</header>
 				</div>

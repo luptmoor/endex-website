@@ -2694,3 +2694,33 @@ input, select, textarea {
 	  max-width: 400px; /* optional cap if you like */
 	}
   }
+
+
+
+  /* Container für den Sprachschalter */
+.lang-switch {
+	position: absolute;   /* oben rechts positionieren */
+	top: 8rem;
+	right: 1rem;
+	font-size: 0.9rem;
+	font-family: sans-serif;
+  }
+  
+  /* Links schwarz, ohne Unterstrich */
+  .lang-switch a {
+	color: #000;           /* schwarz */
+	text-decoration: none; /* kein Unterstrich */
+	margin: 0 0.25rem;     /* Abstand links/rechts */
+  }
+  
+  /* Hover-Effekt optional */
+  .lang-switch a:hover {
+	text-decoration: underline;
+  }
+  
+  /* Aktive Sprache fett */
+  .lang-switch a.active {
+	font-weight: 900;
+	cursor: default;       /* zeigt an, dass man nicht klicken sollte */
+  }
+  

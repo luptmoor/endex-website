@@ -108,25 +108,25 @@
 								<a href="../en/index.html" lang="en">EN</a>
 							</nav>
 							<script>
-								// Pfad der aktuellen Seite
-								const path = window.location.pathname;
+								const path = window.location.pathname; // z. B. /de/about.html
 							  
-								// Alle Sprach-Links durchgehen
 								document.querySelectorAll('.lang-switch a').forEach(link => {
-								  // href des Links relativ zum Root
 								  let href = link.getAttribute('href');
 							  
-								  // Project Page: ../ am Anfang entfernen
+								  // Project Page: ../ entfernen
 								  if (href.startsWith('../')) {
 									href = href.replace('../', '/');
 								  }
 							  
-								  // Wenn die aktuelle Seite im href enthalten ist, aktiv markieren
-								  if (path.includes(href)) {
+								  // Prüfen, ob der Sprachordner Teil des Pfads ist
+								  // z.B. "/de/" in "/de/about.html"
+								  const folder = href.split('/')[1]; // "de" oder "en"
+								  if (path.includes(`/${folder}/`)) {
 									link.classList.add('active');
 								  }
 								});
 							  </script>
+							  
 							  
 
 					</header>

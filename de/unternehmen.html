@@ -4,14 +4,81 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
-<html>
+<html lang="de">
 	<head>
-		<title>Verti by HTML5 UP</title>
+		<title>endex | Ingenieurbüro für Fernerkundung und Geodaten</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="./assets/css/main.css" />
+		<link rel="icon" type="image/png" href="images/icon_dense_black.png" />
+		<link rel="alternate" hreflang="de" href="https://endex-geodaten.de/de/" />
+		<link rel="alternate" hreflang="en" href="https://endex-geodaten.de/en/" />
+		<style>
+			/* Footer color override */
+			#footer-wrapper {
+				background: #000;
+				color: #a3cb71;
+				height: 60vh;
+			}
+			#footer-wrapper a,
+			#footer-wrapper h3,
+			#footer-wrapper .menu li {
+				color: #a3cb71;
+			}
+			#footer {
+				padding: 0.75rem 0 0.5rem 0;
+			}
+			#footer .row {
+				margin: 0;
+			}
+			#footer .widget {
+				margin-bottom: 0.5rem;
+			}
+			#footer .widget h3 {
+				margin: 0 0 0.35rem 0;
+			}
+			#footer .widget.links ul.style2 li {
+				margin-bottom: 0.2rem;
+			}
+			#footer .widget.contact p {
+				margin: 0.2rem 0 0 0;
+			}
+			#footer .menu {
+				margin: 0;
+			}
+			/* Nav buttons - only for selected/active */
+			#nav > ul > li.current > a {
+				background: #000;
+				color: #a3cb71 !important;
+				border-radius: 4px;
+				padding: 0.75em 1.25em;
+			}
+			/* Unselected nav buttons */
+			#nav > ul > li:not(.current) > a {
+				color: #000 !important;
+			}
+			/* Black container */
+			#black-container-wrapper {
+				background: #000;
+				padding: 2em 0;
+			}
+			/* Feature box images - change white padding to green */
+			.box.feature .image.featured {
+				background: #a3cb71 !important;
+			}
+			/* Feature box text area */
+			.box.feature .inner {
+				background: #a3cb71;
+				color: #000;
+			}
+			.box.feature .inner h2,
+			.box.feature .inner p,
+			.box.feature .inner a {
+				color: #000;
+			}
+		</style>
 	</head>
-	<body class="is-preload left-sidebar">
+	<body class="is-preload homepage">
 		<div id="page-wrapper">
 
 			<!-- Header -->
@@ -20,34 +87,17 @@
 
 						<!-- Logo -->
 							<div id="logo">
-								<h1><a href="index.html">Verti</a></h1>
-								<span>by HTML5 UP</span>
+								<a href="index.html">
+									<img src="images/logo_banner_trans.png" alt="endex logo" class="logo" />
+								</a>
 							</div>
 
 						<!-- Nav -->
 							<nav id="nav">
 								<ul>
-									<li><a href="index.html">Welcome</a></li>
-									<li>
-										<a href="#">Dropdown</a>
-										<ul>
-											<li><a href="#">Lorem ipsum dolor</a></li>
-											<li><a href="#">Magna phasellus</a></li>
-											<li>
-												<a href="#">Phasellus consequat</a>
-												<ul>
-													<li><a href="#">Lorem ipsum dolor</a></li>
-													<li><a href="#">Phasellus consequat</a></li>
-													<li><a href="#">Magna phasellus</a></li>
-													<li><a href="#">Etiam dolore nisl</a></li>
-												</ul>
-											</li>
-											<li><a href="#">Veroeros feugiat</a></li>
-										</ul>
-									</li>
-									<li class="current"><a href="left-sidebar.html">Left Sidebar</a></li>
-									<li><a href="right-sidebar.html">Right Sidebar</a></li>
-									<li><a href="no-sidebar.html">No Sidebar</a></li>
+									<li><a href="index.html">Start</a></li>
+									<li><a href="leistungen.html">Leistungen</a></li>
+									<li class="current"><a href="unternehmen.html">Unternehmen</a></li>
 								</ul>
 							</nav>
 
@@ -58,100 +108,157 @@
 								<a href="../en/unternehmen.html" lang="en">EN</a>
 							</nav>
 							<script>
-								// Pfad der aktuellen Seite
-								const path = window.location.pathname;
+								const path = window.location.pathname; // z. B. /de/about.html
 							  
-								// Alle Sprach-Links durchgehen
 								document.querySelectorAll('.lang-switch a').forEach(link => {
-								  // href des Links relativ zum Root
 								  let href = link.getAttribute('href');
 							  
-								  // Project Page: ../ am Anfang entfernen
+								  // Project Page: ../ entfernen
 								  if (href.startsWith('../')) {
 									href = href.replace('../', '/');
 								  }
 							  
-								  // Wenn die aktuelle Seite im href enthalten ist, aktiv markieren
-								  if (path.includes(href)) {
+								  // Prüfen, ob der Sprachordner Teil des Pfads ist
+								  // z.B. "/de/" in "/de/about.html"
+								  const folder = href.split('/')[1]; // "de" oder "en"
+								  if (path.includes(`/${folder}/`)) {
 									link.classList.add('active');
 								  }
 								});
 							  </script>
 							  
+							  
 
 					</header>
 				</div>
 
-			<!-- Main -->
-				<div id="main-wrapper">
+			<!-- Black Container -->
+				<div id="black-container-wrapper">
 					<div class="container">
-						<div class="row gtr-200">
-							<div class="col-4 col-12-medium">
-								<div id="sidebar">
-
-									<!-- Sidebar -->
-										<section>
-											<h3>Subheading</h3>
-											<p>Phasellus quam turpis, feugiat sit amet ornare in, hendrerit in lectus.
-											Praesent semper mod quis eget mi. Etiam eu ante risus. Aliquam erat volutpat.
-											Aliquam luctus et mattis lectus sit amet pulvinar. Nam turpis nisi
-											consequat etiam.</p>
-											<footer>
-												<a href="#" class="button icon solid fa-info-circle">Find out more</a>
-											</footer>
-										</section>
-
-										<section>
-											<h3>Subheading</h3>
-											<ul class="style2">
-												<li><a href="#">Amet turpis, feugiat et sit amet</a></li>
-												<li><a href="#">Ornare in hendrerit in lectus</a></li>
-												<li><a href="#">Semper mod quis eget mi dolore</a></li>
-												<li><a href="#">Quam turpis feugiat sit dolor</a></li>
-												<li><a href="#">Amet ornare in hendrerit in lectus</a></li>
-												<li><a href="#">Semper mod quisturpis nisi</a></li>
-											</ul>
-										</section>
-
-								</div>
-							</div>
-							<div class="col-8 col-12-medium imp-medium">
-								<div id="content">
-
-									<!-- Content -->
-										<article>
-
-											<h2>Left Sidebar</h2>
-
-											<p>Phasellus quam turpis, feugiat sit amet ornare in, hendrerit in lectus.
-											Praesent semper mod quis eget mi. Etiam eu ante risus. Aliquam erat volutpat.
-											Aliquam luctus et mattis lectus sit amet pulvinar. Nam turpis nisi
-											consequat etiam lorem ipsum dolor sit amet nullam.</p>
-
-											<h3>More intriguing information</h3>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac quam risus, at tempus
-											justo. Sed dictum rutrum massa eu volutpat. Quisque vitae hendrerit sem. Pellentesque lorem felis,
-											ultricies a bibendum id, bibendum sit amet nisl. Mauris et lorem quam. Maecenas rutrum imperdiet
-											vulputate. Nulla quis nibh ipsum, sed egestas justo. Morbi ut ante mattis orci convallis tempor.
-											Etiam a lacus a lacus pharetra porttitor quis accumsan odio. Sed vel euismod nisi. Etiam convallis
-											rhoncus dui quis euismod. Maecenas lorem tellus, congue et condimentum ac, ullamcorper non sapien.
-											Donec sagittis massa et leo semper a scelerisque metus faucibus. Morbi congue mattis mi.
-											Phasellus sed nisl vitae risus tristique volutpat. Cras rutrum commodo luctus.</p>
-
-											<p>Phasellus odio risus, faucibus et viverra vitae, eleifend ac purus. Praesent mattis, enim
-											quis hendrerit porttitor, sapien tortor viverra magna, sit amet rhoncus nisl lacus nec arcu.
-											Suspendisse laoreet metus ut metus imperdiet interdum aliquam justo tincidunt. Mauris dolor urna,
-											fringilla vel malesuada ac, dignissim eu mi. Praesent mollis massa ac nulla pretium pretium.
-											Maecenas tortor mauris, consectetur pellentesque dapibus eget, tincidunt vitae arcu.
-											Vestibulum purus augue, tincidunt sit amet iaculis id, porta eu purus.</p>
-
-										</article>
-
-								</div>
+						<div class="row">
+							<div class="col-12">
+								<p style="font-size: 2em; color: #a3cb71; text-align: center; margin: 0;">
+									Diese Website ist zurzeit im Aufbau. Bitte wenden Sie sich bei Fragen an lukas.uptmoor@endex-geodaten.de
+								</p>
 							</div>
 						</div>
 					</div>
 				</div>
+
+			<!-- Banner (commented out by request)
+				<div id="banner-wrapper">
+					<div id="banner" class="box container">
+						<div class="row">
+							<div class="col-7 col-12-medium">
+								<h2>Hi. This is Verti.</h2>
+								<p>It's a free responsive site template by HTML5 UP</p>
+							</div>
+							<div class="col-5 col-12-medium">
+								<ul>
+									<li><a href="#" class="button large icon solid fa-arrow-circle-right">Ok let's go</a></li>
+									<li><a href="#" class="button alt large icon solid fa-question-circle">More info</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			-->
+	 
+			<!-- Features -->
+				<div id="features-wrapper">
+					<div class="container">
+						<div class="row">
+							<div class="col-4 col-12-medium">
+
+								<!-- Box -->
+									<section class="box feature">
+										<a href="#" class="image featured"><img src="images/i1.png" alt="" /></a>
+										<div class="inner">
+											<header>
+												<h2>Inspektion von Bauwerken und Technischen Anlagen</h2>
+												<p> </p>
+											</header>
+											<p> </p>
+										</div>
+									</section>
+
+							</div>
+							<div class="col-4 col-12-medium">
+
+								<!-- Box -->
+									<section class="box feature">
+										<a href="#" class="image featured"><img src="images/i2.png" alt="" /></a>
+										<div class="inner">
+											<header>
+												<h2>Kartierung von Land- und Wasserflächen</h2>
+												<p> </p>
+											</header>
+											<p> </p>
+										</div>
+									</section>
+
+							</div>
+							<div class="col-4 col-12-medium">
+
+								<!-- Box -->
+									<section class="box feature">
+										<a href="#" class="image featured"><img src="images/i3.png" alt="" /></a>
+										<div class="inner">
+											<header>
+												<h2>Verarbeitung und Auswertung von Geodaten</h2>
+												<p> </p>
+											</header>
+											<p> </p>
+										</div>
+									</section>
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+			<!-- Main (commented out by request)
+				<div id="main-wrapper">
+					<div class="container">
+						<div class="row gtr-200">
+							<div class="col-4 col-12-medium">
+
+								Sidebar
+									<div id="sidebar">
+										<section class="widget thumbnails">
+											<h3>Interesting stuff</h3>
+											<div class="grid">
+												<div class="row gtr-50">
+													<div class="col-6"><a href="#" class="image fit"><img src="images/pic04.jpg" alt="" /></a></div>
+													<div class="col-6"><a href="#" class="image fit"><img src="images/pic05.jpg" alt="" /></a></div>
+													<div class="col-6"><a href="#" class="image fit"><img src="images/pic06.jpg" alt="" /></a></div>
+													<div class="col-6"><a href="#" class="image fit"><img src="images/pic07.jpg" alt="" /></a></div>
+												</div>
+											</div>
+											<a href="#" class="button icon fa-file-alt">More</a>
+										</section>
+									</div>
+
+							</div>
+				
+							<div class="col-8 col-12-medium imp-medium">
+
+								Content
+									<div id="content">
+										<section class="last">
+											<h2>So what's this all about?</h2>
+											<p>This is <strong>Verti</strong>, a free and fully responsive HTML5 site template by <a href="http://html5up.net">HTML5 UP</a>.
+											Verti is released under the <a href="http://html5up.net/license">Creative Commons Attribution license</a>, so feel free to use it for any personal or commercial project you might have going on (just don't forget to credit us for the design!)</p>
+											<p>Phasellus quam turpis, feugiat sit amet ornare in, hendrerit in lectus. Praesent semper bibendum ipsum, et tristique augue fringilla eu. Vivamus id risus vel dolor auctor euismod quis eget mi. Etiam eu ante risus. Aliquam erat volutpat. Aliquam luctus mattis lectus sit amet phasellus quam turpis.</p>
+											<a href="#" class="button icon solid fa-arrow-circle-right">Continue Reading</a>
+										</section>
+									</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			-->
 
 			<!-- Footer -->
 				<div id="footer-wrapper">
@@ -159,7 +266,7 @@
 						<div class="row">
 							<div class="col-3 col-6-medium col-12-small">
 
-								<!-- Links -->
+								<!-- Links
 									<section class="widget links">
 										<h3>Random Stuff</h3>
 										<ul class="style2">
@@ -170,11 +277,11 @@
 											<li><a href="#">Nullam scelerisque blandit leo</a></li>
 										</ul>
 									</section>
-
+								-->
 							</div>
 							<div class="col-3 col-6-medium col-12-small">
 
-								<!-- Links -->
+								<!-- Links
 									<section class="widget links">
 										<h3>Random Stuff</h3>
 										<ul class="style2">
@@ -185,11 +292,11 @@
 											<li><a href="#">Nullam scelerisque blandit leo</a></li>
 										</ul>
 									</section>
-
+ 								-->
 							</div>
 							<div class="col-3 col-6-medium col-12-small">
 
-								<!-- Links -->
+								<!-- Links 
 									<section class="widget links">
 										<h3>Random Stuff</h3>
 										<ul class="style2">
@@ -200,13 +307,14 @@
 											<li><a href="#">Nullam scelerisque blandit leo</a></li>
 										</ul>
 									</section>
-
+								-->
 							</div>
 							<div class="col-3 col-6-medium col-12-small">
 
 								<!-- Contact -->
-									<section class="widget contact">
-										<h3>Contact Us</h3>
+									<section class="widget contact last">
+										<h3>Impressum</h3>
+										<!-- social media icons 
 										<ul>
 											<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
 											<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
@@ -214,18 +322,20 @@
 											<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
 											<li><a href="#" class="icon brands fa-pinterest"><span class="label">Pinterest</span></a></li>
 										</ul>
-										<p>1234 Fictional Road<br />
-										Nashville, TN 00000<br />
-										(800) 555-0000</p>
+										-->
+										<p>Inh. Lukas Uptmoor<br />
+										Wicheler Kamp 2 <br />
+										49393 Lohne (Oldenburg) <br />
+										USt.-IdNr. DE455733549<br />
 									</section>
 
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-12">
-								<div id="copyright">
+								<div id="copyright" style="color: #000;">
 									<ul class="menu">
-										<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+										<li>&copy; endex Geodaten. All rights reserved</li>
 									</ul>
 								</div>
 							</div>
